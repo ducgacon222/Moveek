@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">BookMovieTicket</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- BaseActivity -->
+    <string name="baseactivity_noNetworkFound">Không có kết nối internet, vui lòng thử lại!</string>
+    <string name="baseactivity_dialog_ok_button">Có</string>
+
+    <!-- Anim -->
+    <integer name="activity_anim_duration">300</integer>
+    <integer name="activity_anim_duration_out">500</integer>
+
+    <!-- BottomNavigation -->
+    <string name="bottomnavigation_home">Home</string>
+    <string name="bottomnavigation_cinema">Cinema</string>
+    <string name="bottomnavigation_blog">Movie Blog</string>
+    <string name="bottomnavigation_account">Account</string>
+
+    <!-- Location_Menu_Home -->
+
+    <string name="location_menu_home_all">All</string>
+    <string name="location_menu_home_hanoi">Hà Nội</string>
+    <string name="location_menu_home_hochiminh">TP Hồ Chí Minh</string>
+    <string name="location_menu_home_danang">Đà Nẵng</string>
+    <string name="location_menu_home_angiang">An Giang</string>
+    <string name="location_menu_home_bentre">Bến Tre</string>
+    <string name="location_menu_home_camau">Cà Mau</string>
+    <string name="location_menu_home_haiphong">Hải Phòng</string>
+    <string name="location_menu_home_nghean">Nghệ An</string>
+    <string name="location_menu_home_daklak">Đắk Lắk</string>
+
+    <!-- BlogFragment -->
+    <string name="tabtitle1_blog">REVIEW</string>
+    <string name="tabtitle2_blog">TIN TỨC</string>
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottomnav_home"
+        android:title="@string/bottomnavigation_home"
+        android:icon="@drawable/ic_home"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/bottomnav_cinema"
+        android:title="@string/bottomnavigation_cinema"
+        android:icon="@drawable/ic_cinema"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/bottomnav_blog"
+        android:title="@string/bottomnavigation_blog"
+        android:icon="@drawable/ic_blog"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/bottomnav_account"
+        android:title="@string/bottomnavigation_account"
+        android:icon="@drawable/ic_account"
+        android:enabled="true"/>
+</menu>
