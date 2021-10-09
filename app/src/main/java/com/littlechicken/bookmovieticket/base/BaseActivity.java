@@ -115,20 +115,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void addFrag(FragmentManager manager, Fragment fragment, String tag, int containerId)
     {
-        Fragment fragmentcheck = manager.findFragmentByTag(tag);
+        String fragmentTag = fragment.getClass().getSimpleName();
+        boolean fragmentPopped = manager.popBackStackImmediate(fragmentTag, 0);
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
-                R.anim.trans_right_in, R.anim.trans_right_out);
-        if(fragmentcheck == null)
+        if(!fragmentPopped && manager.findFragmentByTag(fragmentTag) == null)
         {
+            transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
+                    R.anim.trans_right_in, R.anim.trans_right_out);
             transaction.add(containerId, fragment, tag)
                     .addToBackStack(tag)
-                    .commit();
-            manager.executePendingTransactions();
-        }
-        else
-        {
-            transaction.replace(containerId, fragment, tag)
                     .commit();
             manager.executePendingTransactions();
         }
@@ -136,22 +131,16 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void addFrag(FragmentManager manager, Fragment fragment, String tag, int containerId, Bundle bundle)
     {
-        Fragment fragmentcheck = manager.findFragmentByTag(tag);
+        String fragmentTag = fragment.getClass().getSimpleName();
+        boolean fragmentPopped = manager.popBackStackImmediate(fragmentTag, 0);
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
-                R.anim.trans_right_in, R.anim.trans_right_out);
-        if(fragmentcheck == null)
+        if(!fragmentPopped && manager.findFragmentByTag(fragmentTag) == null)
         {
             fragment.setArguments(bundle);
+            transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
+                    R.anim.trans_right_in, R.anim.trans_right_out);
             transaction.add(containerId, fragment, tag)
                     .addToBackStack(tag)
-                    .commit();
-            manager.executePendingTransactions();
-        }
-        else
-        {
-            fragment.setArguments(bundle);
-            transaction.replace(containerId, fragment, tag)
                     .commit();
             manager.executePendingTransactions();
         }
@@ -159,20 +148,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void replaceFrag(FragmentManager manager, Fragment fragment, String tag, int containerId)
     {
-        Fragment fragmentcheck = manager.findFragmentByTag(tag);
+        String fragmentTag = fragment.getClass().getSimpleName();
+        boolean fragmentPopped = manager.popBackStackImmediate(fragmentTag, 0);
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
-                R.anim.trans_right_in, R.anim.trans_right_out);
-        if(fragmentcheck == null)
+        if(!fragmentPopped && manager.findFragmentByTag(fragmentTag) == null)
         {
+            transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
+                    R.anim.trans_right_in, R.anim.trans_right_out);
             transaction.replace(containerId, fragment, tag)
                     .addToBackStack(tag)
-                    .commit();
-            manager.executePendingTransactions();
-        }
-        else
-        {
-            transaction.replace(containerId, fragment, tag)
                     .commit();
             manager.executePendingTransactions();
         }
@@ -180,22 +164,16 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void replaceFrag(FragmentManager manager, Fragment fragment, String tag, int containerId, Bundle bundle)
     {
-        Fragment fragmentcheck = manager.findFragmentByTag(tag);
+        String fragmentTag = fragment.getClass().getSimpleName();
+        boolean fragmentPopped = manager.popBackStackImmediate(fragmentTag, 0);
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
-                R.anim.trans_right_in, R.anim.trans_right_out);
-        if(fragmentcheck == null)
+        if(!fragmentPopped && manager.findFragmentByTag(fragmentTag) == null)
         {
             fragment.setArguments(bundle);
+            transaction.setCustomAnimations(R.anim.trans_left_in, R.anim.trans_left_out,
+                    R.anim.trans_right_in, R.anim.trans_right_out);
             transaction.replace(containerId, fragment, tag)
                     .addToBackStack(tag)
-                    .commit();
-            manager.executePendingTransactions();
-        }
-        else
-        {
-            fragment.setArguments(bundle);
-            transaction.replace(containerId, fragment, tag)
                     .commit();
             manager.executePendingTransactions();
         }

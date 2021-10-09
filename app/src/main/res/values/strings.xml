@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BookMovieTicket</string>
+    <string name="app_name">Moveek</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- BaseActivity -->
@@ -11,10 +11,10 @@
     <integer name="activity_anim_duration_out">500</integer>
 
     <!-- BottomNavigation -->
-    <string name="bottomnavigation_home">Home</string>
-    <string name="bottomnavigation_cinema">Cinema</string>
-    <string name="bottomnavigation_blog">Movie Blog</string>
-    <string name="bottomnavigation_account">Account</string>
+    <string name="bottomnavigation_home">Trang Chủ</string>
+    <string name="bottomnavigation_cinema">Rạp Phim</string>
+    <string name="bottomnavigation_blog">Điện Ảnh</string>
+    <string name="bottomnavigation_account">Tài Khoản</string>
 
     <!-- Location_Menu_Home -->
 
@@ -30,7 +30,16 @@
     <string name="location_menu_home_daklak">Đắk Lắk</string>
 
     <!-- BlogFragment -->
+    <string name="tv_title_blog">Điện Ảnh</string>
     <string name="tabtitle1_blog">REVIEW</string>
     <string name="tabtitle2_blog">TIN TỨC</string>
+    
+    <!-- FilmDetailFragment -->
+    <string name="tabtitle1_filmdetail">LỊCH CHIẾU</string>
+    <string name="tabtitle2_filmdetail">THÔNG TIN</string>
+    <string name="tabtitle3_filmdetail">ĐÁNH GIÁ</string>
+
+    <!-- CinemaFragment -->
+    <string name="tv_title_cinema">Rạp Phim</string>
 
 </resources>

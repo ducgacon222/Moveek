@@ -17,8 +17,8 @@ import com.littlechicken.bookmovieticket.model.Blog;
 import java.util.ArrayList;
 
 public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
-    Context context;
-    ArrayList<Blog> listBlog;
+    private Context context;
+    private ArrayList<Blog> listBlog;
     private final OnClickInterface onClickInterface;
 
     public BlogAdapter(Context context, ArrayList<Blog> listBlog, OnClickInterface onClickInterface) {

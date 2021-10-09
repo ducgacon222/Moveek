@@ -199,9 +199,10 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void onStop() {
+        super.onStop();
         saveValueSP();
     }
+
 
 }

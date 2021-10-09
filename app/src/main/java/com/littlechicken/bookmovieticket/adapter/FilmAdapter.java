@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
-    Context context;
-    ArrayList<Film> listFilm;
+    private Context context;
+    private ArrayList<Film> listFilm;
     private final OnClickInterface onClickInterface;
 
     public FilmAdapter(Context context, ArrayList<Film> listFilm, OnClickInterface onClickInterface) {
