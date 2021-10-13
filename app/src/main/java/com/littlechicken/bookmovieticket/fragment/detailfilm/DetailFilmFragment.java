@@ -1,39 +1,50 @@
-package com.littlechicken.bookmovieticket.fragment.filmdetail;
-
-import android.os.Bundle;
+package com.littlechicken.bookmovieticket.fragment.detailfilm;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.tabs.TabLayout;
 import com.littlechicken.bookmovieticket.R;
+import com.littlechicken.bookmovieticket.adapter.ViewPagerAdapter;
 import com.littlechicken.bookmovieticket.base.BaseFragment;
+import com.littlechicken.bookmovieticket.fragment.blog.BlogTab1Fragment;
+import com.littlechicken.bookmovieticket.fragment.blog.BlogTab2Fragment;
 
-public class FilmDetailFragment extends BaseFragment {
-    CollapsingToolbarLayout collapsingToolbarLayout;
-    ConstraintLayout constraintLayout_basicinfo;
-    AppBarLayout appBarLayout;
-    Toolbar toolbar;
-    public FilmDetailFragment() {
+public class DetailFilmFragment extends BaseFragment {
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+    private ConstraintLayout constraintLayout_basicinfo;
+    private AppBarLayout appBarLayout;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
+    public DetailFilmFragment() {
         // Required empty public constructor
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_film_detail;
+        return R.layout.fragment_detail_film;
     }
 
     @Override
     protected void initView(View view) {
         mapping(view);
         collapsechange();
+
+        tabLayout.setupWithViewPager(viewPager);
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPagerAdapter.addFragment(new ShowTimeFragment(), getString(R.string.tabtitle1_filmdetail));
+        viewPagerAdapter.addFragment(new InfoFilmFragment(), getString(R.string.tabtitle2_filmdetail));
+        viewPagerAdapter.addFragment(new RatingFilmFragment(), getString(R.string.tabtitle3_filmdetail));
+        viewPager.setAdapter(viewPagerAdapter);
     }
 
     @Override
@@ -50,10 +61,12 @@ public class FilmDetailFragment extends BaseFragment {
 
     private void mapping(View view)
     {
-        collapsingToolbarLayout = view.findViewById(R.id.collapsingtoolbar_filmdetail);
-        constraintLayout_basicinfo = view.findViewById(R.id.constraintLayout_basicinfo_filmdetail);
-        appBarLayout = view.findViewById(R.id.appbarlayout_filmdetail);
-        toolbar = view.findViewById(R.id.toolbar_filmdetail);
+        collapsingToolbarLayout = view.findViewById(R.id.collapsingtoolbar_detailfilm);
+        constraintLayout_basicinfo = view.findViewById(R.id.constraintLayout_basicinfo_detailfilm);
+        appBarLayout = view.findViewById(R.id.appbarlayout_detailfilm);
+        toolbar = view.findViewById(R.id.toolbar_detailfilm);
+        tabLayout = view.findViewById(R.id.tablayout_detailfilm);
+        viewPager = view.findViewById(R.id.viewpager_detailfilm);
     }
 
     private void collapsechange()

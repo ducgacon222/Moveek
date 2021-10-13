@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.littlechicken.bookmovieticket.base.BaseActivity;
-import com.littlechicken.bookmovieticket.fragment.filmdetail.FilmDetailFragment;
 import com.littlechicken.bookmovieticket.fragment.landing.LandingFragment;
 import com.littlechicken.bookmovieticket.network.ConnectionLiveData;
 
@@ -60,11 +59,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() > 0) {
-            getFragmentManager().popBackStack();
+        if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+            super.onBackPressed();
+            finish();
         } else {
-            this.finish();
-//            super.onBackPressed();
+            getSupportFragmentManager().popBackStack();
         }
     }
 

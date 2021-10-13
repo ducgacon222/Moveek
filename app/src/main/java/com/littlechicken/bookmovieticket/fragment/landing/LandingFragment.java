@@ -15,7 +15,7 @@ import com.littlechicken.bookmovieticket.fragment.cinema.CinemaFragment;
 import com.littlechicken.bookmovieticket.fragment.home.HomeFragment;
 
 public class LandingFragment extends BaseFragment {
-    BottomNavigationView mBottomNavigationView;
+    private BottomNavigationView mBottomNavigationView;
 
     public LandingFragment() {
 

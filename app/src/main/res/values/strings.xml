@@ -16,24 +16,28 @@
     <string name="bottomnavigation_blog">Điện Ảnh</string>
     <string name="bottomnavigation_account">Tài Khoản</string>
 
+    <!-- HomeFragment -->
+    <string name="tv_nowshowing_home">Đang Chiếu</string>
+    <string name="tv_comingsoon_home">Sắp Chiếu</string>
+
     <!-- Location_Menu_Home -->
 
-    <string name="location_menu_home_all">All</string>
-    <string name="location_menu_home_hanoi">Hà Nội</string>
-    <string name="location_menu_home_hochiminh">TP Hồ Chí Minh</string>
-    <string name="location_menu_home_danang">Đà Nẵng</string>
-    <string name="location_menu_home_angiang">An Giang</string>
-    <string name="location_menu_home_bentre">Bến Tre</string>
-    <string name="location_menu_home_camau">Cà Mau</string>
-    <string name="location_menu_home_haiphong">Hải Phòng</string>
-    <string name="location_menu_home_nghean">Nghệ An</string>
-    <string name="location_menu_home_daklak">Đắk Lắk</string>
+    <!--    <string name="location_menu_home_all">All</string>-->
+    <!--    <string name="location_menu_home_hanoi">Hà Nội</string>-->
+    <!--    <string name="location_menu_home_hochiminh">TP Hồ Chí Minh</string>-->
+    <!--    <string name="location_menu_home_danang">Đà Nẵng</string>-->
+    <!--    <string name="location_menu_home_angiang">An Giang</string>-->
+    <!--    <string name="location_menu_home_bentre">Bến Tre</string>-->
+    <!--    <string name="location_menu_home_camau">Cà Mau</string>-->
+    <!--    <string name="location_menu_home_haiphong">Hải Phòng</string>-->
+    <!--    <string name="location_menu_home_nghean">Nghệ An</string>-->
+    <!--    <string name="location_menu_home_daklak">Đắk Lắk</string>-->
 
     <!-- BlogFragment -->
     <string name="tv_title_blog">Điện Ảnh</string>
     <string name="tabtitle1_blog">REVIEW</string>
     <string name="tabtitle2_blog">TIN TỨC</string>
-    
+
     <!-- FilmDetailFragment -->
     <string name="tabtitle1_filmdetail">LỊCH CHIẾU</string>
     <string name="tabtitle2_filmdetail">THÔNG TIN</string>
@@ -41,5 +45,12 @@
 
     <!-- CinemaFragment -->
     <string name="tv_title_cinema">Rạp Phim</string>
+
+    <!-- InfoFilmFragment -->
+    <string name="tv_contenttitle_infofilm">Nội Dung</string>
+    <string name="tv_contentshowmore_infofilm">Xem Thêm</string>
+    <string name="tv_contentshowless_infofilm">Rút gọn</string>
+    <string name="tv_actortitle_infofilm">Diễn Viễn</string>
+    <string name="tv_directortitle_infofilm">Đạo Diễn</string>
 
 </resources>

@@ -66,7 +66,7 @@
                 android:id="@+id/tv_nowshowing_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Now Showing"
+                android:text="@string/tv_nowshowing_home"
                 android:textColor="@color/home_bluetitle"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="Coming Soon"
+                android:text="@string/tv_comingsoon_home"
                 android:textColor="@color/home_normaltext"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -95,7 +95,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/tv_location_home"
                 app:layout_constraintEnd_toStartOf="@+id/tv_location_home"
                 app:layout_constraintTop_toTopOf="@+id/tv_location_home"
-                app:tint="#487ebc" />
+                app:tint="#487ebc"/>
 
             <TextView
                 android:id="@+id/tv_location_home"

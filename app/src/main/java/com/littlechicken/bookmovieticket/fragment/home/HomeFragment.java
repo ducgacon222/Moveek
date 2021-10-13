@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +19,7 @@ import com.littlechicken.bookmovieticket.adapter.FilmAdapter;
 import com.littlechicken.bookmovieticket.base.BaseFragment;
 import com.littlechicken.bookmovieticket.custom.OnClickInterface;
 import com.littlechicken.bookmovieticket.custom.SpacesItemDecoration;
-import com.littlechicken.bookmovieticket.fragment.filmdetail.FilmDetailFragment;
+import com.littlechicken.bookmovieticket.fragment.detailfilm.DetailFilmFragment;
 import com.littlechicken.bookmovieticket.model.Advertisement;
 import com.littlechicken.bookmovieticket.adapter.AdvertisementAdapter;
 import com.littlechicken.bookmovieticket.R;
@@ -192,9 +191,9 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
     public void onClick(View view, int position, boolean isLongClick) {
         if(!isLongClick)
         {
-            FilmDetailFragment filmDetailFragment = new FilmDetailFragment();
+            DetailFilmFragment detailFilmFragment = new DetailFilmFragment();
             ((MainActivity)getActivity()).replaceFrag(getActivity().getSupportFragmentManager(),
-                    filmDetailFragment, filmDetailFragment.getClass().getSimpleName(), R.id.container_main);
+                    detailFilmFragment, detailFilmFragment.getClass().getSimpleName(), R.id.container_main);
         }
     }
 

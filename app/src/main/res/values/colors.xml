@@ -22,6 +22,9 @@
     <!-- BlogTab -->
     <color name="blogtab_background">#f2f2f2</color>
 
-    <!-- FilmDetailFragment -->
-    <color name="filmdetail_normaltext">#888888</color>
+    <!-- DetailFilmFragment -->
+    <color name="detailfilm_normaltext">#888888</color>
+
+    <!-- InfoFilmFragment -->
+    <color name="infofilm_background">#f2f2f2</color>
 </resources>
