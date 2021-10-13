@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         this.getSupportActionBar().hide();
         dialogNoInternet = createInternetDialog(MainActivity.this);
+        dialogNoInternet.setCanceledOnTouchOutside(false);
         connectionLiveData = new ConnectionLiveData(this);
         connectionLiveData.observe(this, connection -> {
             if (connection.getIsConnected()) {
