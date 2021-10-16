@@ -59,12 +59,8 @@ public class CinemaFragment extends BaseFragment {
 
     @Override
     protected void initListener(View view) {
-        tv_location.setOnClickListener(view3 -> {
-            locationDialog();
-        });
-        img_location.setOnClickListener(viet4 -> {
-            locationDialog();
-        });
+        tv_location.setOnClickListener(view3 -> locationDialog());
+        img_location.setOnClickListener(viet4 -> locationDialog());
     }
 
     private void locationDialog()
@@ -76,7 +72,7 @@ public class CinemaFragment extends BaseFragment {
         {
             checked = indexLocation;
         }
-        alt_bld.setSingleChoiceItems(locationArray, checked, (DialogInterface.OnClickListener) (dialog, item) -> {
+        alt_bld.setSingleChoiceItems(locationArray, checked, (dialog, item) -> {
             tv_location.setText(locationArray[item]);
             indexLocation = item;
             dialog.dismiss();

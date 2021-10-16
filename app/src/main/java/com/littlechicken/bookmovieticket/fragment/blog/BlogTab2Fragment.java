@@ -50,10 +50,10 @@ public class BlogTab2Fragment extends BaseFragment implements OnClickInterface {
         listBlogtab2 = new ArrayList<>();
         listBlogtab2.add(new Blog(R.drawable.blogtintuc_marvel, "[Tin tức] Hé Lộ Mức Cát Xê Của Dàn Diễn Viên Avengers, Nhìn Ai Cũng Thấy Nghìn Tỷ Cả"));
         listBlogtab2.add(new Blog(R.drawable.blogtintuc_han, "[Tin tức] Top 10 Nữ Diễn Viên Hàn Quốc Xuất Sắc Nhất Năm 2021"));
-        listBlogtab2.add(new Blog(R.drawable.blogreview_shangchi, "[Tin tức] Công Bố Top 5 Của 11 Hạng Mục VTV Awards 2021"));
+        listBlogtab2.add(new Blog(R.drawable.blogtintuc_viet, "[Tin tức] Công Bố Top 5 Của 11 Hạng Mục VTV Awards 2021"));
         listBlogtab2.add(new Blog(R.drawable.blogtintuc_marvel, "[Tin tức] Hé Lộ Mức Cát Xê Của Dàn Diễn Viên Avengers, Nhìn Ai Cũng Thấy Nghìn Tỷ Cả"));
         listBlogtab2.add(new Blog(R.drawable.blogtintuc_han, "[Tin tức] Top 10 Nữ Diễn Viên Hàn Quốc Xuất Sắc Nhất Năm 2021"));
-        listBlogtab2.add(new Blog(R.drawable.blogreview_shangchi, "[Tin tức] Công Bố Top 5 Của 11 Hạng Mục VTV Awards 2021"));
+        listBlogtab2.add(new Blog(R.drawable.blogtintuc_viet, "[Tin tức] Công Bố Top 5 Của 11 Hạng Mục VTV Awards 2021"));
     }
 
     @Override

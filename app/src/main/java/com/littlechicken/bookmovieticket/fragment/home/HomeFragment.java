@@ -38,6 +38,7 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
     private ArrayList<Film> listdata;
     private RecyclerView rcv_film;
     private FilmAdapter filmAdapter;
+    private GridLayoutManager gridLayoutManager;
 
     private int indexLocation = -2;
 
@@ -77,7 +78,7 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
         rcv_film.setHasFixedSize(true);
         filmAdapter = new FilmAdapter(getContext(),listdata, HomeFragment.this);
         rcv_film.setAdapter(filmAdapter);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
+        gridLayoutManager = new GridLayoutManager(getActivity(),2);
         rcv_film.setLayoutManager(gridLayoutManager);
         rcv_film.addItemDecoration(new SpacesItemDecoration(30));
     }
@@ -90,6 +91,7 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
             listdata.clear();
             listdata.addAll(listFilm);
             filmAdapter.notifyDataSetChanged();
+            gridLayoutManager.smoothScrollToPosition(rcv_film, null, 0);
         });
         tv_comingsoon.setOnClickListener(view2 -> {
             highlightedTV(tv_comingsoon);
@@ -97,13 +99,10 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
             listdata.clear();
             listdata.addAll(listFilm2);
             filmAdapter.notifyDataSetChanged();
+            gridLayoutManager.smoothScrollToPosition(rcv_film, null, 0);
         });
-        tv_location.setOnClickListener(view3 -> {
-            locationDialog();
-        });
-        img_location.setOnClickListener(viet4 -> {
-            locationDialog();
-        });
+        tv_location.setOnClickListener(view3 -> locationDialog());
+        img_location.setOnClickListener(viet4 -> locationDialog());
 
     }
 

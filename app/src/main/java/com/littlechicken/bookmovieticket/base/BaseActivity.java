@@ -109,8 +109,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         dialogBuilder.show();
     }
 
-    public void showToast(String mToastMsg) {
-        Toast.makeText(this, mToastMsg, Toast.LENGTH_SHORT).show();
+    public void showToast(String message) {
+        if(MainActivity.mToast != null)
+        {
+            MainActivity.mToast.cancel();
+        }
+        MainActivity.mToast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        MainActivity.mToast.show();
     }
 
     public void addFrag(FragmentManager manager, Fragment fragment, String tag, int containerId)

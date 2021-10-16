@@ -49,10 +49,10 @@ public class BlogTab1Fragment extends BaseFragment implements OnClickInterface {
     {
         listBlogtab1 = new ArrayList<>();
         listBlogtab1.add(new Blog(R.drawable.blogreview_trangti, "[Review] Trạng Tí: Một Bộ Phim Đầy Sáng Tạo!"));
-        listBlogtab1.add(new Blog(R.drawable.blogreview_venom, "[Review] Sau 5 Lần Rời Lịch, Venow Có Đáng Xem?"));
+        listBlogtab1.add(new Blog(R.drawable.blogreview_venom, "[Review] Sau 5 Lần Rời Lịch, Venom Có Đáng Xem?"));
         listBlogtab1.add(new Blog(R.drawable.blogreview_shangchi, "[Review] Cảm Nghĩ Đầu Tiên Về Shangchi"));
         listBlogtab1.add(new Blog(R.drawable.blogreview_trangti, "[Review] Trạng Tí: Một Bộ Phim Đầy Sáng Tạo!"));
-        listBlogtab1.add(new Blog(R.drawable.blogreview_venom, "[Review] Sau 5 Lần Rời Lịch, Venow Có Đáng Xem?"));
+        listBlogtab1.add(new Blog(R.drawable.blogreview_venom, "[Review] Sau 5 Lần Rời Lịch, Venom Có Đáng Xem?"));
         listBlogtab1.add(new Blog(R.drawable.blogreview_shangchi, "[Review] Cảm Nghĩ Đầu Tiên Về Shangchi"));
     }
 

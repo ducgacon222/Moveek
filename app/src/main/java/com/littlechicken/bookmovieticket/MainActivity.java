@@ -6,6 +6,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.littlechicken.bookmovieticket.base.BaseActivity;
 import com.littlechicken.bookmovieticket.fragment.landing.LandingFragment;
@@ -14,6 +15,7 @@ import com.littlechicken.bookmovieticket.network.ConnectionLiveData;
 public class MainActivity extends BaseActivity {
     private ConnectionLiveData connectionLiveData;
     private AlertDialog dialogNoInternet;
+    public static Toast mToast;
 
     @Override
     protected int getContentView() {

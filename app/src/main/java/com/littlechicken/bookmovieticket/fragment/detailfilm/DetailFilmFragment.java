@@ -54,9 +54,7 @@ public class DetailFilmFragment extends BaseFragment {
 
     @Override
     protected void initListener(View view) {
-        toolbar.setNavigationOnClickListener(view1 -> {
-            getFragmentManager().popBackStackImmediate();
-        });
+        toolbar.setNavigationOnClickListener(view1 -> getFragmentManager().popBackStackImmediate());
     }
 
     private void mapping(View view)

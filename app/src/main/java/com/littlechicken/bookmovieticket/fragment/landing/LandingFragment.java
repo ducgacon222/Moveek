@@ -40,30 +40,27 @@ public class LandingFragment extends BaseFragment {
 
     @Override
     protected void initListener(View view) {
-        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.bottomnav_home:
-                        HomeFragment homeFragment = new HomeFragment();
-                        ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),homeFragment,homeFragment.getClass().getSimpleName(),R.id.container_landing);
-                        return true;
-                    case R.id.bottomnav_cinema:
-                        CinemaFragment cinemaFragment = new CinemaFragment();
-                        ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),cinemaFragment,cinemaFragment.getClass().getSimpleName(),R.id.container_landing);
-                        return true;
-                    case R.id.bottomnav_blog:
-                        BlogFragment blogFragment = new BlogFragment();
-                        ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),blogFragment,blogFragment.getClass().getSimpleName(),R.id.container_landing);
-                        return true;
-                    case R.id.bottomnav_account:
-                        AccountFragment accountFragment = new AccountFragment();
-                        ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),accountFragment,accountFragment.getClass().getSimpleName(),R.id.container_landing);
-                        return true;
-                }
-                return false;
+        mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId())
+            {
+                case R.id.bottomnav_home:
+                    HomeFragment homeFragment = new HomeFragment();
+                    ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),homeFragment,homeFragment.getClass().getSimpleName(),R.id.container_landing);
+                    return true;
+                case R.id.bottomnav_cinema:
+                    CinemaFragment cinemaFragment = new CinemaFragment();
+                    ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),cinemaFragment,cinemaFragment.getClass().getSimpleName(),R.id.container_landing);
+                    return true;
+                case R.id.bottomnav_blog:
+                    BlogFragment blogFragment = new BlogFragment();
+                    ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),blogFragment,blogFragment.getClass().getSimpleName(),R.id.container_landing);
+                    return true;
+                case R.id.bottomnav_account:
+                    AccountFragment accountFragment = new AccountFragment();
+                    ((MainActivity)getActivity()).replaceFrag(getChildFragmentManager(),accountFragment,accountFragment.getClass().getSimpleName(),R.id.container_landing);
+                    return true;
             }
+            return false;
         });
     }
 

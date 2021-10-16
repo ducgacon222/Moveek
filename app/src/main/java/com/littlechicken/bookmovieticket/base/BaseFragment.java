@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKeys;
 
+import com.littlechicken.bookmovieticket.MainActivity;
 import com.littlechicken.bookmovieticket.R;
 
 import java.io.IOException;
@@ -43,8 +44,13 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void initData(View view);
     protected abstract void initListener(View view);
 
-    public void showToast(Context context, String message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    public void showToast(String message) {
+        if(MainActivity.mToast != null)
+        {
+            MainActivity.mToast.cancel();
+        }
+        MainActivity.mToast = Toast.makeText(getContext(), message, Toast.LENGTH_SHORT);
+        MainActivity.mToast.show();
     }
 
     public SharedPreferences initSharedPreferences(Context context)
