@@ -29,8 +29,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         binding.button2.setOnClickListener(v -> {
             Request signUp = new Request();
-            signUp.setPassword("test");
-            signUp.setUsername("test");
+            signUp.setPassword(binding.editTextTextPassword.getText().toString());
+            signUp.setUsername(binding.editTextTextPassword.getText().toString());
             Retrofit retrofit = APIClient.getInstance();
             APIClientlpm userService = retrofit.create(APIClientlpm.class);
             userService.login(signUp).enqueue(new Callback<Data>() {

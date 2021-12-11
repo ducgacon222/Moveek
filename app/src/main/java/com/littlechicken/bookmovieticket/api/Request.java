@@ -31,4 +31,6 @@ public class Request {
         this.password = password;
     }
 
+    public void setPassword() {
+    }
 }
