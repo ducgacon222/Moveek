@@ -1,4 +1,4 @@
-package com.littlechicken.bookmovieticket.fragment.account.account;
+package com.littlechicken.bookmovieticket.fragment.account;
 
 import android.os.Bundle;
 import android.util.Log;
