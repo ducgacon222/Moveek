@@ -1,8 +1,6 @@
 package com.littlechicken.bookmovieticket.api;
 
-import com.littlechicken.bookmovieticket.model.login.Data;
-import com.littlechicken.bookmovieticket.model.login.Request;
-import com.littlechicken.bookmovieticket.model.login.SignUp;
+import com.littlechicken.bookmovieticket.model.SignUp;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
