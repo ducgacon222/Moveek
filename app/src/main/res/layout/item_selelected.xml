@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.littlechicken.bookmovieticket.api.Data" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{item.date==null?View.GONE:View.VISIBLE}"
+            android:text="@{item.date}" />
+
+        <TextView
+            android:id="@+id/txt_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{item.today}"
+            android:visibility="@{item.today==null?View.GONE:View.VISIBLE}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{item.ticketCost}"
+            android:visibility="@{item.ticketCost==null?View.GONE:View.VISIBLE}" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{item.status}"
+            android:textColor="#F6E655"
+            android:textColorHint="#F6E655"
+            android:visibility="@{item.ticketCost==null?View.GONE:View.VISIBLE}" />
+
+    </LinearLayout>
+</layout>

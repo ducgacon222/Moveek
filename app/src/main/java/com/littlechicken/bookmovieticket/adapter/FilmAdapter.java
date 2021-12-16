@@ -39,24 +39,24 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull FilmAdapter.ViewHolder holder, int position) {
         Film film = listFilm.get(position);
-        holder.img.setImageResource(film.getImg());
-        holder.name.setText(film.getName());
+        if (film != null) {
+          //  holder.img.setImageResource(film.getImg());
+            holder.name.setText(film.getName());
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        if(listFilm != null)
-        {
+        if (listFilm != null) {
             return listFilm.size();
         }
-        else
-        {
-            return 0;
-        }
+        return 0;
+
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         ImageView img;
         TextView name;
 
@@ -75,7 +75,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
 
         @Override
         public boolean onLongClick(View view) {
-            onClickInterface.onClick(view,getAdapterPosition(),true);
+            onClickInterface.onClick(view, getAdapterPosition(), true);
             return false;
         }
     }

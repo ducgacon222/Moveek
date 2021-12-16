@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.littlechicken.bookmovieticket.api.Data" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:foregroundGravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/seate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.seate}"
+            android:textColor="#F6DF11" />
+    </LinearLayout>
+</layout>
