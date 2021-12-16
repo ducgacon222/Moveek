@@ -15,9 +15,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.littlechicken.bookmovieticket.R;
+import com.littlechicken.bookmovieticket.api.APIClient;
+import com.littlechicken.bookmovieticket.api.APIClientlpm;
+import com.littlechicken.bookmovieticket.api.Request;
 import com.littlechicken.bookmovieticket.base.BaseFragment;
+import com.littlechicken.bookmovieticket.model.Cinema;
+import com.littlechicken.bookmovieticket.model.SignUp;
+
+import java.util.List;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CinemaFragment extends BaseFragment {
     private String[] locationArray = {"All","Hà Nội","TP Hồ Chí Minh","Đà Nẵng","An Giang","Bến Tre","Cà Mau","Đắk Lắk","Hải Phòng","Nghệ An"};
@@ -26,8 +41,29 @@ public class CinemaFragment extends BaseFragment {
     private int indexLocation = -2;
 
     public CinemaFragment() {
-        // Required empty public constructor
+
+    Cinema up = new Cinema();
+
+//    Retrofit retrofit = APIClient.getInstance();
+//    APIClientlpm userService = retrofit.create(APIClientlpm.class);
+//        userService.cinema(up).enqueue(new Callback<ResponseBody>() {
+//        @Override
+//        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//            Log.d("TAG", "onResponse: " + response.isSuccessful());
+//            Toast.makeText(getApplicationContext(), ""+response.isSuccessful(), Toast.LENGTH_SHORT).show();
+//        }
+//        @Override
+//        public void onFailure(Call<ResponseBody> call, Throwable t) {
+//            Toast.makeText(getApplicationContext(), ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
+//
+//
+//    });
     }
+
+
+
+
 
     @Override
     protected int getLayoutId() {

@@ -1,10 +1,12 @@
 package com.littlechicken.bookmovieticket.api;
 
+import com.littlechicken.bookmovieticket.model.Cinema;
 import com.littlechicken.bookmovieticket.model.SignUp;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface APIClientlpm {
@@ -14,5 +16,10 @@ public interface APIClientlpm {
 
     @POST("api/Auth/SignIn")
     Call<Data> login(@Body Request request);
+
+
+    @GET("api/Cinema")
+    Call<Cinema> cinema(@Body Cinema cinema);
+
 
 }
