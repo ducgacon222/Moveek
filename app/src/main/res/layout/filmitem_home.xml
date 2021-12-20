@@ -10,6 +10,7 @@
         android:id="@+id/img_filmitem_home"
         android:layout_width="210dp"
         android:layout_height="315dp"
+
         android:scaleType="centerCrop"
         android:src="@drawable/movie_notimetodie"
         app:riv_corner_radius="20dp">

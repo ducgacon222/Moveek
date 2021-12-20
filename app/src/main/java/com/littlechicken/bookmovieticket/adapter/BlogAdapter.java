@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.littlechicken.bookmovieticket.R;
 import com.littlechicken.bookmovieticket.custom.OnClickInterface;
 import com.littlechicken.bookmovieticket.model.Blog;
+import com.littlechicken.bookmovieticket.model.Food;
 
 import java.util.ArrayList;
 
@@ -44,17 +45,14 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        if(listBlog != null)
-        {
+        if (listBlog != null) {
             return listBlog.size();
-        }
-        else
-        {
+        } else {
             return 0;
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         ImageView img;
         TextView title;
 
@@ -73,8 +71,10 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
 
         @Override
         public boolean onLongClick(View view) {
-            onClickInterface.onClick(view,getAdapterPosition(),true);
+            onClickInterface.onClick(view, getAdapterPosition(), true);
             return false;
         }
     }
+
+
 }
