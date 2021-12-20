@@ -30,8 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
-                android:layout_weight="2"
-                android:padding="20dp" />
+                android:layout_weight="2" />
 
 
         </LinearLayout>
@@ -40,7 +39,9 @@
             android:id="@+id/rv_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal"
             android:padding="20dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
@@ -55,7 +56,9 @@
             android:id="@+id/rv_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal"
             android:padding="20dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
@@ -66,15 +69,28 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Chọn Ghế" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_seate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal"
-            android:padding="20dp"
+
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/next"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#EA0606"
+            android:background="@drawable/boder"
+            android:text="Tiếp Tục" />
 
     </LinearLayout>
 

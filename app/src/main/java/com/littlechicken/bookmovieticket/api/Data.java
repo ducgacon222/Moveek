@@ -59,6 +59,17 @@ public class Data {
     @Expose
     private String seate;
 
+    @Expose
+    private String location;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public String getSeate() {
         return seate;
     }

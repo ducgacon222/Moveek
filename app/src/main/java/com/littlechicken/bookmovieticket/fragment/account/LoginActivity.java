@@ -1,5 +1,6 @@
 package com.littlechicken.bookmovieticket.fragment.account;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -25,7 +26,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+
         binding = ActivityLogin2Binding.inflate(getLayoutInflater());
+        binding.button3.setOnClickListener(v -> {
+            startActivity(new Intent(this, RegisterActivity.class));
+        });
+
         setContentView(binding.getRoot());
         binding.button2.setOnClickListener(v -> {
             Request signUp = new Request();
@@ -33,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             signUp.setUsername(binding.editTextTextPassword.getText().toString());
             Retrofit retrofit = APIClient.getInstance();
             APIClientlpm userService = retrofit.create(APIClientlpm.class);
-            userService.login(signUp).enqueue(new Callback<Data>() {
+            userService.login(binding.editTextTextPassword.getText().toString(),binding.editTextTextPassword.getText().toString()).enqueue(new Callback<Data>() {
                 @Override
                 public void onResponse(Call<Data> call, Response<Data> response) {
                     Log.d("TAG", new Gson().toJson(response.body()) + "");
@@ -45,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         });
+
     }
 
 }

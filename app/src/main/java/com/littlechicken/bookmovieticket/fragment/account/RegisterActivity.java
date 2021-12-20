@@ -20,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText edName,edUserName, edEmail, edPass, edAddres;
+    EditText edName, edUserName, edEmail, edPass, edAddres;
     Button btnSignUp;
 
     @Override
@@ -30,24 +30,18 @@ public class RegisterActivity extends AppCompatActivity {
         initView();
 
         btnSignUp.setOnClickListener(v -> {
-//                 if (TextUtils.isEmpty(edName.getText().toString()) && !TextUtils.isEmpty(edEmail.getText().toString())
-//                         && !TextUtils.isEmpty(edUserName.getText().toString())
-//                         && !TextUtils.isEmpty(edAddres.getText().toString()) && ! TextUtils.isEmpty(edPass.getText().toString())) {
-                     SignUp signUp = new SignUp();
-                     signUp.setStatus("11");
-                     signUp.setUpdatedAt("2021-12-07T15:22:27.557Z");
-                     signUp.setCreatedAt("2021-12-07T15:22:27.557Z");
-                     signUp.setAddress(edAddres.getText().toString());
-                     signUp.setUserName(edUserName.getText().toString());
-                     signUp.setLastName(edUserName.getText().toString().trim());
-                     signUp.setEmail(edEmail.getText().toString());
-                     signUp.setFirstName(edName.getText().toString());
-                     signUp.setIsLocked(false);
-                     signUp.setPassword(edPass.getText().toString());
-
-
+            SignUp signUp = new SignUp();
+            signUp.setStatus("11");
+            signUp.setUpdatedAt("2021-12-07T15:22:27.557Z");
+            signUp.setCreatedAt("2021-12-07T15:22:27.557Z");
+            signUp.setAddress(edAddres.getText().toString());
+            signUp.setUserName(edUserName.getText().toString());
+            signUp.setLastName(edUserName.getText().toString().trim());
+            signUp.setEmail(edEmail.getText().toString());
+            signUp.setFirstName(edName.getText().toString());
+            signUp.setIsLocked(false);
+            signUp.setPassword(edPass.getText().toString());
             signUp(signUp);
-//             }
         });
 
     }
@@ -64,28 +58,19 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void signUp(SignUp signUp) {
-        SignUp up = new SignUp();
-        up.setStatus("10");
-        up.setUpdatedAt("2021-12-07T15:22:27.557Z");
-        up.setCreatedAt("2021-12-07T15:22:27.557Z");
-        up.setAddress(edAddres.getText().toString());
-        up.setUserName(edUserName.getText().toString());
-        up.setLastName(edUserName.getText().toString().trim());
-        up.setEmail(edEmail.getText().toString());
-        up.setFirstName(edName.getText().toString());
-        up.setIsLocked(false);
-        up.setPassword(edPass.getText().toString());
+
         Retrofit retrofit = APIClient.getInstance();
         APIClientlpm userService = retrofit.create(APIClientlpm.class);
-        userService.postSignUp(up).enqueue(new Callback<ResponseBody>() {
+        userService.postSignUp(signUp).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 Log.d("TAG", "onResponse: " + response.isSuccessful());
-                Toast.makeText(getApplicationContext(), ""+response.isSuccessful(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "" + response.isSuccessful(), Toast.LENGTH_SHORT).show();
             }
+
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
 

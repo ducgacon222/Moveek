@@ -1,6 +1,7 @@
 package com.littlechicken.bookmovieticket.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,18 +12,25 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.littlechicken.bookmovieticket.R;
+import com.littlechicken.bookmovieticket.api.Data;
 import com.littlechicken.bookmovieticket.custom.OnClickInterface;
 import com.littlechicken.bookmovieticket.model.Film;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<Film> listFilm;
+    private ArrayList<Data> listFilm;
     private final OnClickInterface onClickInterface;
 
-    public FilmAdapter(Context context, ArrayList<Film> listFilm, OnClickInterface onClickInterface) {
+    public void setListFilm(ArrayList<Data> listFilm) {
+        this.listFilm = listFilm;
+        notifyDataSetChanged();
+    }
+
+    public FilmAdapter(Context context, ArrayList<Data> listFilm, OnClickInterface onClickInterface) {
         this.context = context;
         this.listFilm = listFilm;
         this.onClickInterface = onClickInterface;
@@ -38,12 +46,13 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull FilmAdapter.ViewHolder holder, int position) {
-        Film film = listFilm.get(position);
-        if (film != null) {
-          //  holder.img.setImageResource(film.getImg());
-            holder.name.setText(film.getName());
+        Data film = listFilm.get(position);
+        if (film.getPosterImage() != null) {
+//            Picasso.get()
+//                    .load(film.getPosterImage())
+//                    .into(holder.img);
         }
-
+        holder.name.setText(film.getName());
     }
 
     @Override

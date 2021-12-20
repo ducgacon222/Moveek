@@ -13,6 +13,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.islamkhsh.CardSliderViewPager;
 import com.google.gson.Gson;
@@ -46,7 +47,7 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
     private String[] locationArray = {"All", "Hà Nội", "TP Hồ Chí Minh", "Đà Nẵng", "An Giang", "Bến Tre", "Cà Mau", "Đắk Lắk", "Hải Phòng", "Nghệ An"};
     private ArrayList<Film> listFilm;
     private ArrayList<Film> listFilm2;
-    private ArrayList<Film> listdata;
+    private ArrayList<Data> listdata;
     private RecyclerView rcv_film;
     private FilmAdapter filmAdapter;
     private GridLayoutManager gridLayoutManager;
@@ -64,6 +65,7 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
 
     @Override
     protected void initView(View view) {
+        listdata = new ArrayList<>();
         callAPI();
         mapping(view);
         SharedPreferences sharedPreferences = initSharedPreferences(getContext());
@@ -84,13 +86,13 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
             @Override
             public void onResponse(Call<List<Data>> call, Response<List<Data>> response) {
                 if (response.isSuccessful()) {
-                    Log.d("TAG", new Gson().toJson(response.body()));
+                    addDataFilm(response.body());
                 }
             }
 
             @Override
             public void onFailure(Call<List<Data>> call, Throwable t) {
-
+                Toast.makeText(getContext(), ""+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -99,7 +101,6 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
     protected void initData(View view) {
 
         addDataAdvertisement();
-        addDataFilm();
 
         cardSliderViewPager.setAdapter(new AdvertisementAdapter(itemlist));
         rcv_film.setHasFixedSize(true);
@@ -115,18 +116,16 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
     @Override
     protected void initListener(View view) {
         tv_nowshowing.setOnClickListener(view1 -> {
+            filmAdapter.setListFilm(listdata);
             highlightedTV(tv_nowshowing);
             lowlightedTV(tv_comingsoon);
-            listdata.clear();
-            listdata.addAll(listFilm);
             filmAdapter.notifyDataSetChanged();
             gridLayoutManager.smoothScrollToPosition(rcv_film, null, 0);
         });
         tv_comingsoon.setOnClickListener(view2 -> {
+            filmAdapter.setListFilm(listdata);
             highlightedTV(tv_comingsoon);
             lowlightedTV(tv_nowshowing);
-            listdata.clear();
-            listdata.addAll(listFilm2);
             filmAdapter.notifyDataSetChanged();
             gridLayoutManager.smoothScrollToPosition(rcv_film, null, 0);
         });
@@ -177,27 +176,10 @@ public class HomeFragment extends BaseFragment implements OnClickInterface {
         itemlist.add(new Advertisement(R.drawable.advertisement3));
     }
 
-    private void addDataFilm() {
-        listFilm = new ArrayList<>();
-        listFilm.add(new Film(R.drawable.movie_notimetodie, "No Time To Die"));
-        listFilm.add(new Film(R.drawable.movie_aquietplace2, "A Quite Place 2"));
-        listFilm.add(new Film(R.drawable.movie_blackwidow, "Black Widow"));
-        listFilm.add(new Film(R.drawable.movie_candyman, "Candy Man"));
-        listFilm.add(new Film(R.drawable.movie_chuyenmagannha, "Chuyện Ma Gần Nhà"));
-        listFilm.add(new Film(R.drawable.movie_eternals, "Eternals"));
-        listFilm.add(new Film(R.drawable.movie_shangchi, "Shangchi"));
-        listFilm.add(new Film(R.drawable.movie_venom, "Venom"));
-        listFilm2 = new ArrayList<>();
-        listFilm2.add(new Film(R.drawable.movie_venom, "Venom"));
-        listFilm2.add(new Film(R.drawable.movie_shangchi, "Shangchi"));
-        listFilm2.add(new Film(R.drawable.movie_eternals, "Eternals"));
-        listFilm2.add(new Film(R.drawable.movie_chuyenmagannha, "Chuyện Ma Gần Nhà"));
-        listFilm2.add(new Film(R.drawable.movie_candyman, "Candy Man"));
-        listFilm2.add(new Film(R.drawable.movie_blackwidow, "Black Widow"));
-        listFilm2.add(new Film(R.drawable.movie_aquietplace2, "A Quite Place 2"));
-        listFilm2.add(new Film(R.drawable.movie_notimetodie, "No Time To Die"));
-        listdata = new ArrayList<>();
-        listdata.addAll(listFilm);
+    private void addDataFilm(List<Data> list) {
+        listdata.addAll(list);
+        Log.d("TAG", new Gson().toJson(list));
+        filmAdapter.setListFilm(listdata);
     }
 
     private void saveValueSP() {
